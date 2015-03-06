@@ -51,7 +51,7 @@ Help
             Remove mail from alerts
 
         --run
-            Run! (optional: --verbose)
+            Run! (useful for crontab) (optional: --verbose)
 
 
 Use
