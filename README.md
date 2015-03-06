@@ -100,7 +100,7 @@ Show all...
 
 Run...
 
-	./pharming.pl --show-all
+	./pharming.pl --run
 	run-check manoel.junior Manoels-MacBook-Pro 8.8.8.8 example.com 93.184.216.34 ok
 	run-check manoel.junior Manoels-MacBook-Pro 8.8.4.4 example.com 93.184.216.34 ok
 	run-check manoel.junior Manoels-MacBook-Pro 208.67.222.222 example.org 93.184.216.34 ok
