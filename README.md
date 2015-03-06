@@ -1,4 +1,4 @@
-# pharmin
+# pharming
 Simple tool for monitoring DNS Hijacking
 
 
