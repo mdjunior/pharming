@@ -11,7 +11,6 @@ use Env qw(USER);
 use Getopt::Long;
 use List::Util qw(first);
 use Net::DNS;
-use Readonly;
 use Storable;
 use Sys::Hostname;
 use Sys::Syslog;
@@ -22,6 +21,7 @@ use feature 'unicode_strings';
 use Authen::SASL;
 use Net::SSLeay;
 use Net::SMTP::SSL;
+use Readonly;
 
 our $VERSION = 0.1;
 

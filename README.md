@@ -11,7 +11,7 @@ To install the dependencies, run:
 
 or (old way)
 
-	cpan install Authen::SASL Net::SSLeay Net::SMTP::SSL
+	cpan install Authen::SASL Net::SSLeay Net::SMTP::SSL Readonly
 
 Help
 ----
