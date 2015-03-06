@@ -9,6 +9,9 @@ To install the dependencies, run:
 
     cpanm --installdeps .
 
+or (old way)
+
+	cpan install Authen::SASL Net::SSLeay Net::SMTP::SSL
 
 Use
 ---
@@ -42,7 +45,7 @@ Add mail to alert...
 
 	./pharming.pl --mail-add john@example.com --notify nok --smtp smtp.example.com --auth 'john@example.com:pass' --description "John Smith"
 
-In this case, John will be notified where the scan result in "nok". Possible values are: "ok" or "nok".
+In this case, John will be notified where the scan result in `nok`. Possible values are: `ok` or `nok.
 
 
 Remove mail to alert...
