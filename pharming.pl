@@ -45,6 +45,7 @@ my $domain_remove;
 my $description;
 my $run;
 my $verbose;
+my $help;
 
 #  setting STDOUT to UTF-8
 binmode STDOUT, ':encoding(UTF-8)';
@@ -64,6 +65,7 @@ GetOptions(
     'description=s'   => \$description,
     'run'             => \$run,
     'verbose'         => \$verbose,
+    'help'            => \$help,
 );
 
 #
@@ -94,6 +96,50 @@ sub log_check {
     return;
 }
 
+
+#
+# Show help
+#
+if ($help) {
+    print q(
+        pharming
+            Simple tool for monitoring DNS Hijacking
+
+        --help
+            Show this help
+
+        --create
+            Create a database
+
+        --show-all
+            Show all information
+
+        --server-add
+            Add DNS server to monitoring (optional: --description "DNS description")
+
+        --server-remove
+            Remove DNS server to monitoring
+
+        --domain-add
+            Add domain to monitoring (optional: --description "Example home page")
+
+        --domain-remove
+            Remove domain to monitoring
+
+        --mail-add
+            Add mail to send alerts
+            REQUIRED:   --notify nok or --notify ok
+                        --smtp smtp.example.com
+                        --auth 'john@example.com:pass' (ex: user:pass)
+
+        --mail-remove john@example.com
+            Remove mail from alerts
+
+        --run
+            Run! (optional: --verbose)
+) or croak 'Error: not possible show help';
+
+}
 
 #
 # Create storable file

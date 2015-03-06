@@ -1,4 +1,4 @@
-# pharmin
+# pharming
 Simple tool for monitoring DNS Hijacking
 
 
@@ -13,6 +13,47 @@ or (old way)
 
 	cpan install Authen::SASL Net::SSLeay Net::SMTP::SSL
 
+Help
+----
+
+	./pharming.pl --help
+        pharming
+            Simple tool for monitoring DNS Hijacking
+
+        --help
+            Show this help
+
+        --create
+            Create a database
+
+        --show-all
+            Show all information
+
+        --server-add
+            Add DNS server to monitoring (optional: --description "DNS description")
+
+        --server-remove
+            Remove DNS server to monitoring
+
+        --domain-add
+            Add domain to monitoring (optional: --description "Example home page")
+
+        --domain-remove
+            Remove domain to monitoring
+
+        --mail-add
+            Add mail to send alerts
+            REQUIRED:   --notify nok or --notify ok
+                        --smtp smtp.example.com
+                        --auth 'john@example.com:pass' (ex: user:pass)
+
+        --mail-remove john@example.com
+            Remove mail from alerts
+
+        --run
+            Run! (optional: --verbose)
+
+
 Use
 ---
 
@@ -21,7 +62,7 @@ Create config...
 	./pharming.pl --create
 
 
-Add server to monitorng...
+Add server to monitoring...
 
 	./pharming.pl --server-add 8.8.8.8 --description "Google Public DNS"
 
@@ -41,7 +82,7 @@ Remove domain to monitoring...
 	./pharming.pl --domain-remove www.example.com
 
 
-Add mail to alert...
+Add mail to send alerts...
 
 	./pharming.pl --mail-add john@example.com --notify nok --smtp smtp.example.com --auth 'john@example.com:pass' --description "John Smith"
 
