@@ -334,6 +334,8 @@ if ($run) {
 
     # check nameservers
     foreach my $server (@{$structure->{servers}}) {
+        log_('run-check-nameserver', $USER, $HOSTNAME, $server->{server},
+            'init');
 
         # for each domain
         foreach my $domain (@{$structure->{domains}}) {
@@ -497,6 +499,9 @@ sub get_recursive_record {
         nameservers => [$nameserver],
         recurse     => 0,
         defnames    => 0,
+        udp_timeout => 3,
+        retry       => 1,
+        retrans     => 1,
     );
 
     my $res = $resolver->query($domain, 'A');
